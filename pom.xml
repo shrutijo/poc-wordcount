@@ -2,13 +2,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.infocepts.sparkpoc</groupId>
   <artifactId>workspace-sparkpoc-wordcount</artifactId>
-  <version>1.1</version>
+  <version>1.2</version>
   <name>workspace-sparkpoc-wordcount</name>
   <description>Sample wordcount spark-maven project</description>
   <scm>
- 	<connection>scm:git:ssh://git@github.com:shsk/${project.artifactId}.git</connection>
-	<developerConnection>scm:git:ssh://git@github.com:shsk/${project.artifactId}.git</developerConnection>
-	<url>ssh://git@github.com:shsk/${project.artifactId}.git</url>
+ 	<connection>scm:git:ssh://git@github.com:shrutijo/${project.artifactId}.git</connection>
+	<developerConnection>scm:git:ssh://git@github.com:shrutijo/${project.artifactId}.git</developerConnection>
+	<url>ssh://git@github.com:shrutijo/${project.artifactId}.git</url>
   	<tag>@{project.version}</tag> 
   </scm>
   <pluginRepositories>
@@ -171,6 +171,22 @@
 						</flowInitContext>
 					</configuration>
 				</plugin>
+				<plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-assembly-plugin</artifactId>
+  <configuration>
+    <descriptor>src/assembly/bin.xml</descriptor>
+    <finalName>apache-maven-cookbook-${pom.version}</finalName>
+  </configuration>
+  <executions>
+    <execution>
+      <phase>package</phase>
+      <goals>
+        <goal>single</goal>
+      </goals>
+    </execution>
+  </executions>
+</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
